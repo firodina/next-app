@@ -1,0 +1,39 @@
+.objectContain{
+  margin: 20px  0 50px 140px;
+  display: flex;
+
+}
+.btn {
+  background-color: #2B59FF; /* Equivalent to bg-primary-blue */
+  color: white; /* Equivalent to text-white */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  min-width: 130px; /* Equivalent to min-w-[130px] */
+  padding: 0.5rem 1rem; /* Optional: Add padding for better appearance */
+  border: none; /* Optional: Remove border */
+  cursor: pointer; /* Optional: Show pointer on hover */
+  transition: background-color 0.3s; /* Optional: Smooth transition */
+  display: flex;
+}
+.flexCenter {
+  display: flex;               /* Equivalent to 'flex' */
+  justify-content: center;     /* Equivalent to 'justify-center' */
+  /* align-items: center;         Equivalent to 'items-center' */
+}
+.navContainer {
+  max-width: 1440px;        /* Equivalent to max-w-[1440px] */
+  margin-left: auto;        /* Equivalent to mx-auto */
+  margin-right: auto;       /* Equivalent to mx-auto */
+  display: flex;            /* Equivalent to flex */
+  justify-content: space-between; /* Equivalent to justify-between */
+  align-items: center;      /* Equivalent to items-center */
+  padding-top: 1rem;       /* Equivalent to py-4 (1rem = 16px) */
+  padding-bottom: 1rem;    /* Equivalent to py-4 (1rem = 16px) */
+}
+
+/* Media query for small screens */
+@media (min-width: 640px) { /* 'sm' breakpoint */
+  .nav-container {
+    padding-left: 1.5rem;   /* Equivalent to sm:px-6 (1.5rem = 24px) */
+    padding-right: 1.5rem;  /* Equivalent to sm:px-6 (1.5rem = 24px) */
+  }
+}
