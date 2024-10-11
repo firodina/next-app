@@ -30,11 +30,9 @@ function Hero() {
       >
         <div className="hero__image">
           <img src="/hero.png" alt="hero" className="object-contain" />
-          <div className="hero__image-overlay">
-        
-          </div>
         </div>
       </div>
+      <div className="hero__image-overlay"></div>
     </div>
   );
 }
