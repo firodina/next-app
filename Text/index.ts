@@ -1,3 +1,4 @@
+
 import { MouseEventHandler } from "react";
 
 export interface CustmerButtonProps {
@@ -5,4 +6,8 @@ export interface CustmerButtonProps {
   containerStyle?: string;
   btnType?: "button" | "submit";
   handleClick?: MouseEventHandler<HTMLButtonElement>;
+}
+export interface SearcManufacturerprops{
+  manufacturer: string;
+  setManuFacturer: (manufacturer: string) => void; 
 }
