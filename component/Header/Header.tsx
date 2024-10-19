@@ -1,32 +1,27 @@
 import Image from "next/image";
 import React from "react";
-import style from "./header.module.css";
 import Link from "next/link";
-import CustmerButton from "../CustomerBotton/CustmerButton";
+import CustmerButton from "../CustomerBotton/CustomerButton";
 
-function Header() {
-  return (
-    <header className="w-full absolute z-10">
-      <nav className={style.navContainer}>
-        <Link href={"/"} className={style.flexCenter}>
-          <Image
-            src="/logo.svg"
-            alt="ar hub logo"
-            width={118}
-            height={18}
-            className="object-contain"
-          />
-        </Link>
-        <div className="flex items-center">
-          <CustmerButton
-            title="Sign-In"
-            containerStyle={style.btn}
-            btnType="button"
-          />
-        </div>
-      </nav>
-    </header>
-  );
-}
+const Header = () => (
+  <header className="w-full  absolute z-10">
+    <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4 bg-transparent">
+      <Link href="/" className="flex justify-center items-center">
+        <Image
+          src="/logo.svg"
+          alt="logo"
+          width={118}
+          height={18}
+          className="object-contain"
+        />
+      </Link>
 
+      <CustmerButton
+        title="Sign in"
+        btnType="button"
+        containerStyle="text-primary-blue rounded-full bg-white min-w-[130px]"
+      />
+    </nav>
+  </header>
+);
 export default Header;

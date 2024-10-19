@@ -1,68 +1,7 @@
-.objectContain{
+/* .objectContain{
   margin: 20px  0 0 140px;
   display: flex;
 
-}
-.footerContainer {
-  display: flex;                   /* Equivalent to 'flex' */
-  flex-direction: column;         /* Equivalent to 'flex-col' */
-  color: #2B2C35;                 /* Equivalent to 'text-black-100' */
-  margin-top: 1.25rem;            /* Equivalent to 'mt-5' (1.25rem = 20px) */
-  border-top: 1px solid #E5E7EB;  /* Equivalent to 'border-t border-gray-100' */
-}
-.footerContent {
-  display: flex;                     /* Equivalent to 'flex' */
-  flex-wrap: wrap;                  /* Equivalent to 'flex-wrap' */
-  justify-content: space-between;    /* Equivalent to 'justify-between' */
-  gap: 1.25rem;                      /* Equivalent to 'gap-5' (1.25rem = 20px) */
-  padding-left: 1.5rem;             /* Equivalent to 'sm:px-16' (1.5rem = 24px) */
-  padding-right: 1.5rem;            /* Equivalent to 'sm:px-16' */
-  padding-top: 2.5rem;              /* Equivalent to 'py-10' (2.5rem = 40px) */
-  padding-bottom: 2.5rem;           /* Equivalent to 'py-10' */
-}
-.columnContainer {
-  display: flex;                /* Equivalent to 'flex' */
-  flex-direction: column;      /* Equivalent to 'flex-col' */
-  justify-content: flex-start;  /* Equivalent to 'justify-start' */
-  align-items: flex-start;     /* Equivalent to 'items-start' */
-  gap: 1.5rem;                 /* Equivalent to 'gap-6' (1.5rem = 24px) */
-}
-.flexColumn {
-  display: flex;                /* Equivalent to 'flex' */
-  flex-direction: column;      /* Equivalent to 'flex-col' */
-  gap: 1.25rem;                /* Equivalent to 'gap-5' (1.25rem = 20px) */
-}
-.textBase {
-  font-size: 1rem;           /* Equivalent to 'text-base' (1rem = 16px) */
-  line-height: 1.5;          /* Default line height for base text */
-
-  color: #4A5568; 
-  margin-left: 140px;           /* Equivalent to 'text-gray-700' */
-}
-.wrapper {
-  display: flex;                      /* Equivalent to 'flex' */
-  justify-content: space-between;     /* Equivalent to 'justify-between' */
-  align-items: center;                /* Equivalent to 'items-center' */
-  flex-wrap: wrap;                    /* Equivalent to 'flex-wrap' */
-  margin-top: 2.5rem;                 /* Equivalent to 'mt-10' (2.5rem = 40px) */
-  border-top: 1px solid #E5E7EB;      /* Equivalent to 'border-t border-gray-100' */
-  padding-left: 1.5rem;               /* Equivalent to 'sm:px-16' (1.5rem = 24px) */
-  padding-right: 1.5rem;              /* Equivalent to 'sm:px-16' */
-  padding-top: 2.5rem;                /* Equivalent to 'py-10' (2.5rem = 40px) */
-  padding-bottom: 2.5rem;             /* Equivalent to 'py-10' */
-}
-
-/* Media query for small screens */
-@media (max-width: 640px) { /* Adjust based on your breakpoints */
-  .wrapper {
-    padding-left: 1.5rem;           /* Equivalent to 'px-6' (0.375rem = 6px) */
-    padding-right: 1.5rem;          /* Equivalent to 'px-6' */
-  }
-}
-
-/* Media query for max-md breakpoint */
-@media (max-width: 767px) { /* Adjust the max-width based on your breakpoints */
-  .footerContent {
-    flex-direction: column;        /* Equivalent to 'max-md:flex-col' */
-  }
-}
+} */
+/*  */
+/*  */
