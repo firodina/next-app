@@ -4,7 +4,7 @@ export interface CustmerButtonProps {
   title: string;
   containerStyle?: string;
   textStyles?: string;
-  options: string;
+  options?: string;
   rightIcon?: string;
   isDisable?: boolean;
   btnType?: "button" | "submit";

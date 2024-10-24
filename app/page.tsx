@@ -1,7 +1,7 @@
 import Hero from "@/component/Hero/Hero";
 import SearchBar from "@/component/SearchBar/SearchBar";
 import "./globals.css";
-import CustomFilter from "@/component/CustomFilter/CustomFilter";
+// import CustomFilter from "@/component/CustomFilter/CustomFilter";
 import { fetchCars } from "@/Utils";
 import ShowMore from "@/component/ShowMore/ShowMore";
 import CarCard from "@/component/CarCard/CarCard";
