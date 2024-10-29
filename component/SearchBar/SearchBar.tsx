@@ -61,7 +61,6 @@ const SearchBar = () => {
     }?${searchParams.toString()}`;
 
     router.push(newPathname);
-    // Scroll to the search bar element
   };
 
   return (
