@@ -1,11 +1,10 @@
 "use client";
-
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import SearchManfacturer from "../SearchManfacturer/SearchManufacturer";
+import SearchManufacturer from "../SearchManfacturer/SearchManufacturer";
 
-const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
+const SearchButton: React.FC<{ otherClasses: string }> = ({ otherClasses }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
     <Image
       src={"/magnifying-glass.svg"}
@@ -17,58 +16,52 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = () => {
-  const [manufacturer, setManuFacturer] = useState("");
-  const [model, setModel] = useState("");
-
+const SearchBar: React.FC = () => {
+  const [manufacturer, setManufacturer] = useState<string>("");
+  const [model, setModel] = useState<string>("");
   const router = useRouter();
+  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (manufacturer.trim() === "" && model.trim() === "") {
       return alert("Please provide some input");
     }
-
+    setScrollPosition(window.scrollY); // Save the current scroll position
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
-    const searchBarElement = document.getElementById("search-bar");
-    if (searchBarElement) {
-      searchBarElement.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const updateSearchParams = (model: string, manufacturer: string) => {
-    // Create a new URLSearchParams object using the current URL search parameters
     const searchParams = new URLSearchParams(window.location.search);
-
-    // Update or delete the 'model' search parameter based on the 'model' value
     if (model) {
       searchParams.set("model", model);
     } else {
       searchParams.delete("model");
     }
-
-    // Update or delete the 'manufacturer' search parameter based on the 'manufacturer' value
     if (manufacturer) {
       searchParams.set("manufacturer", manufacturer);
     } else {
       searchParams.delete("manufacturer");
     }
-
-    // Generate the new pathname with the updated search parameters
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}`;
-
-    router.push(newPathname);
+    router.replace(newPathname); // Use replace instead of push to avoid adding to the history stack
   };
 
+  useEffect(() => {
+    if (scrollPosition !== null) {
+      window.scrollTo(10, scrollPosition); // Restore the scroll position
+      setScrollPosition(null); // Reset scroll position state
+    }
+  }, [scrollPosition]); // Run the effect when the scroll position or URL path changes
+
   return (
-    <form className="searchbar" id="search-bar" onSubmit={handleSearch}>
+    <form id="search-bar" className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
-        <SearchManfacturer
+        <SearchManufacturer
           manufacturer={manufacturer}
-          setManuFacturer={setManuFacturer}
+          setManuFacturer={setManufacturer}
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
@@ -88,7 +81,6 @@ const SearchBar = () => {
           placeholder="Tiguan..."
           className="searchbar__input"
         />
-
         <SearchButton otherClasses="sm:hidden" />
       </div>
       <SearchButton otherClasses="max-sm:hidden" />
