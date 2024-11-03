@@ -20,14 +20,23 @@ const SearchBar: React.FC = () => {
   const [manufacturer, setManufacturer] = useState<string>("");
   const [model, setModel] = useState<string>("");
   const router = useRouter();
-  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Get the current search params from the URL
+    const searchParams = new URLSearchParams(window.location.search);
+    const modelParam = searchParams.get("model");
+    const manufacturerParam = searchParams.get("manufacturer");
+
+    // Update the state with the values from the search params
+    if (modelParam) setModel(modelParam);
+    if (manufacturerParam) setManufacturer(manufacturerParam);
+  }, []);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (manufacturer.trim() === "" && model.trim() === "") {
       return alert("Please provide some input");
     }
-    setScrollPosition(window.scrollY); // Save the current scroll position
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
 
@@ -46,15 +55,8 @@ const SearchBar: React.FC = () => {
     const newPathname = `${
       window.location.pathname
     }?${searchParams.toString()}`;
-    router.replace(newPathname); // Use replace instead of push to avoid adding to the history stack
+    router.push(newPathname, { scroll: false }); // Use replace instead of push to avoid adding to the history stack
   };
-
-  useEffect(() => {
-    if (scrollPosition !== null) {
-      window.scrollTo(10, scrollPosition); // Restore the scroll position
-      setScrollPosition(null); // Reset scroll position state
-    }
-  }, [scrollPosition]); // Run the effect when the scroll position or URL path changes
 
   return (
     <form id="search-bar" className="searchbar" onSubmit={handleSearch}>
